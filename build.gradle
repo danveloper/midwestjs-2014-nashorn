@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  jcenter()
+  maven { url "https://maven.java.net/content/repositories/public" }
+}
+
+ext {
+  avatarVersion = "0.10.25-SNAPSHOT"
+}
+
+sourceSets {
+  main {
+    resources {
+      srcDir 'src/main/javascript'
+    }
+  }
+}
+
+dependencies {
+  compile "com.oracle:avatar-js:${avatarVersion}"
+  compile "com.oracle:libavatar-js-macosx-x64:${avatarVersion}"
+}
