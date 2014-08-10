@@ -1,0 +1,10 @@
+extends layout
+
+block body
+    div(ng-controller='AppCtrl',style="text-align:center")
+        h2 Welcome to Nashorn!
+
+        div(ng-view)
+
+    script(src='js/lib/angular/angular.min.js')
+    script(src='js/app.js')

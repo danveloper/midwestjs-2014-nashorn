@@ -1,13 +1,19 @@
-var http = require('http');
+// v8 and Nashorn have different ideas about errors
+if (!process.versions.hasOwnProperty("v8")) {
+    require('./error.extensions.js');
+}
 
-// Configure our HTTP server to respond with Hello World to all requests.
-var server = http.createServer(function (request, response) {
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello World\n");
+var express = require('express');
+    path    = require('path');
+    routes  = require('./routes');
+
+var app = module.exports = express();
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+
+app.get('*', routes.index);
+
+var server = app.listen(process.env.PORT || 3000, function() {
+    console.log('Listening on port %d', server.address().port);
 });
-
-// Listen on port 8000, IP defaults to 127.0.0.1
-server.listen(8000);
-
-// Put a friendly message on the terminal
-console.log("Server running at http://127.0.0.1:8000/");

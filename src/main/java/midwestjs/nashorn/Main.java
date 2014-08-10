@@ -1,7 +1,9 @@
 package midwestjs.nashorn;
 
 import com.oracle.avatar.js.Server;
+import jdk.nashorn.api.scripting.URLReader;
 
+import javax.script.ScriptEngine;
 import java.io.File;
 import java.lang.reflect.Field;
 
