@@ -16,6 +16,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Throwable {
-        js("/thread.runner.js");
+        js("/collection.example.js");
     }
+
 }
