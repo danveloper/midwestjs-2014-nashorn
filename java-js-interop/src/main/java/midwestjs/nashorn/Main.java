@@ -16,7 +16,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws Throwable {
-        Foo foo = js("/foo.impl.js");
-        System.out.println(foo.getMessage());
+        js("/thread.runner.js");
     }
 }
